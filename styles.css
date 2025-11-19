@@ -114,16 +114,16 @@ body {
 .hero {
     background: linear-gradient(135deg, rgba(26, 26, 26, 0.7) 0%, rgba(34, 34, 34, 0.7) 100%),
                 url('file.enc') center/cover no-repeat;
-    background-attachment: fixed;
     background-size: cover;
     background-position: center;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     position: relative;
     overflow: hidden;
+    background-attachment: scroll;
 }
 
 .hero::before {
@@ -917,6 +917,11 @@ body {
         gap: 15px;
     }
 
+    .hero {
+        min-height: 90vh;
+        background-attachment: scroll;
+    }
+
     .hero-title {
         font-size: 48px;
     }
@@ -959,12 +964,19 @@ body {
 }
 
 @media (max-width: 480px) {
+    .hero {
+        min-height: 80vh;
+        background-attachment: scroll;
+    }
+
     .hero-title {
         font-size: 36px;
+        margin: 0 10px;
     }
 
     .hero-subtitle {
         font-size: 16px;
+        margin: 0 10px;
     }
 
     .cta-btn {
