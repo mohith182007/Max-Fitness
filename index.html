@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAX FITNESS - Premium Gym & Fitness Center</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-dumbbell"></i>
+                <span>MAX FITNESS</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#facilities" class="nav-link">Facilities</a></li>
+                <li><a href="#locations" class="nav-link">Locations</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">MAX FITNESS</h1>
+            <p class="hero-subtitle">Transform Your Body, Transform Your Life</p>
+            <button class="cta-btn">Start Your Journey</button>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <h2>About MAX FITNESS</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Welcome to MAX FITNESS, your premier destination for fitness excellence. With state-of-the-art equipment, experienced trainers, and a supportive community, we're committed to helping you achieve your fitness goals.</p>
+                    <p>Whether you're a beginner or an experienced athlete, our comprehensive facilities and professional staff are here to support your journey to peak performance.</p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat">
+                        <h3>1</h3>
+                        <p>Location</p>
+                    </div>
+                    <div class="stat">
+                        <h3>50+</h3>
+                        <p>Members</p>
+                    </div>
+                    <div class="stat">
+                        <h3>5</h3>
+                        <p>Trainers</p>
+                    </div>
+                    <div class="stat">
+                        <h3>24/7</h3>
+                        <p>Support</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Facilities Section -->
+    <section id="facilities" class="facilities">
+        <div class="container">
+            <h2>Our Facilities</h2>
+            <div class="facilities-grid">
+                <div class="facility-card">
+                    <div class="facility-icon">
+                        <i class="fas fa-person-running"></i>
+                    </div>
+                    <h3>Cardio Zone</h3>
+                    <p>State-of-the-art cardio equipment including treadmills, ellipticals, bikes, and rowing machines with digital tracking.</p>
+                </div>
+
+                <div class="facility-card">
+                    <div class="facility-icon">
+                        <i class="fas fa-dumbbell"></i>
+                    </div>
+                    <h3>Strength Training</h3>
+                    <p>Complete weightlifting and strength conditioning equipment with free weights and machines for all fitness levels.</p>
+                </div>
+
+                <div class="facility-card">
+                    <div class="facility-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Personal Training</h3>
+                    <p>One-on-one coaching from our certified trainers tailored to your specific fitness goals and abilities.</p>
+                </div>
+
+                <div class="facility-card">
+                    <div class="facility-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>Nutrition Coaching</h3>
+                    <p>Expert nutritionists to help you plan meals and achieve optimal dietary goals for maximum results.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Locations Section -->
+    <section id="locations" class="locations">
+        <div class="container">
+            <h2>Our Location</h2>
+            <div class="locations-grid">
+                <div class="location-card">
+                    <h3>MAX FITNESS</h3>
+                    <p class="address"><i class="fas fa-map-marker-alt"></i> Rajiv Gandhi Circle, Laggere Main Rd, 25-26 Street, Near Anjaneya Temple, Near Kalikamba Temple, Muneshwara Nagar, Chowdeshwari Nagar, Hegganahalli, Bengaluru, Karnataka 560058</p>
+                    <p class="phone"><i class="fas fa-phone"></i> +91 94825 07769</p>
+                    <p class="hours"><i class="fas fa-clock"></i> Mon-Sat: 5 AM - 10 PM | Sun: 7 AM - 7 PM</p>
+                    <button class="view-btn">View on Map</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Membership Plans Section -->
+    <section class="membership">
+        <div class="container">
+            <h2>Membership Plans</h2>
+            <p class="membership-subtitle">Choose Your Perfect Plan</p>
+            
+            <!-- Plan Type Selector -->
+            <div class="plan-selector">
+                <button class="plan-type-btn active" data-plan="cardio-gym">Cardio + Gym Access</button>
+                <button class="plan-type-btn" data-plan="gym-only">Gym Access Only</button>
+            </div>
+
+            <!-- Cardio + Gym Access Plans -->
+            <div class="membership-grid" id="cardio-gym">
+                <div class="membership-card">
+                    <h3>1 Month</h3>
+                    <div class="price">₹1,500<span>/month</span></div>
+                    <ul class="features">
+                        <li><i class="fas fa-check"></i> Full Cardio Zone access</li>
+                        <li><i class="fas fa-check"></i> Complete Gym access</li>
+                        <li><i class="fas fa-check"></i> Locker room access</li>
+                        <li><i class="fas fa-check"></i> Free WiFi</li>
+                        <li><i class="fas fa-check"></i> Equipment guidance</li>
+                    </ul>
+                    <button class="join-btn">Enroll Now</button>
+                </div>
+
+                <div class="membership-card featured">
+                    <div class="badge">SAVE 10%</div>
+                    <h3>3 Months</h3>
+                    <div class="price">₹4,050<span>/3 months</span></div>
+                    <ul class="features">
+                        <li><i class="fas fa-check"></i> Full Cardio Zone access</li>
+                        <li><i class="fas fa-check"></i> Complete Gym access</li>
+                        <li><i class="fas fa-check"></i> Locker room access</li>
+                        <li><i class="fas fa-check"></i> Free WiFi</li>
+                        <li><i class="fas fa-check"></i> Equipment guidance</li>
+                    </ul>
+                    <button class="join-btn featured-btn">Enroll Now</button>
+                </div>
+
+                <div class="membership-card">
+                    <div class="badge">SAVE 15%</div>
+                    <h3>6 Months</h3>
+                    <div class="price">₹7,650<span>/6 months</span></div>
+                    <ul class="features">
+                        <li><i class="fas fa-check"></i> Full Cardio Zone access</li>
+                        <li><i class="fas fa-check"></i> Complete Gym access</li>
+                        <li><i class="fas fa-check"></i> Locker room access</li>
+                        <li><i class="fas fa-check"></i> Free WiFi</li>
+                        <li><i class="fas fa-check"></i> Equipment guidance</li>
+                    </ul>
+                    <button class="join-btn">Enroll Now</button>
+                </div>
+
+                <div class="membership-card">
+                    <div class="badge">SAVE 20%</div>
+                    <h3>1 Year</h3>
+                    <div class="price">₹14,400<span>/year</span></div>
+                    <ul class="features">
+                        <li><i class="fas fa-check"></i> Full Cardio Zone access</li>
+                        <li><i class="fas fa-check"></i> Complete Gym access</li>
+                        <li><i class="fas fa-check"></i> Locker room access</li>
+                        <li><i class="fas fa-check"></i> Free WiFi</li>
+                        <li><i class="fas fa-check"></i> Equipment guidance</li>
+                    </ul>
+                    <button class="join-btn">Enroll Now</button>
+                </div>
+            </div>
+
+            <!-- Gym Only Plans -->
+            <div class="membership-grid" id="gym-only" style="display: none;">
+                <div class="membership-card">
+                    <h3>1 Month</h3>
+                    <div class="price">₹999<span>/month</span></div>
+                    <ul class="features">
+                        <li><i class="fas fa-check"></i> Complete Gym access</li>
+                        <li><i class="fas fa-check"></i> Strength Training equipment</li>
+                        <li><i class="fas fa-check"></i> Locker room access</li>
+                        <li><i class="fas fa-check"></i> Free WiFi</li>
+                        <li><i class="fas fa-check"></i> Equipment guidance</li>
+                    </ul>
+                    <button class="join-btn">Enroll Now</button>
+                </div>
+
+                <div class="membership-card featured">
+                    <div class="badge">SAVE 10%</div>
+                    <h3>3 Months</h3>
+                    <div class="price">₹2,697<span>/3 months</span></div>
+                    <ul class="features">
+                        <li><i class="fas fa-check"></i> Complete Gym access</li>
+                        <li><i class="fas fa-check"></i> Strength Training equipment</li>
+                        <li><i class="fas fa-check"></i> Locker room access</li>
+                        <li><i class="fas fa-check"></i> Free WiFi</li>
+                        <li><i class="fas fa-check"></i> Equipment guidance</li>
+                    </ul>
+                    <button class="join-btn featured-btn">Enroll Now</button>
+                </div>
+
+                <div class="membership-card">
+                    <div class="badge">SAVE 15%</div>
+                    <h3>6 Months</h3>
+                    <div class="price">₹5,094<span>/6 months</span></div>
+                    <ul class="features">
+                        <li><i class="fas fa-check"></i> Complete Gym access</li>
+                        <li><i class="fas fa-check"></i> Strength Training equipment</li>
+                        <li><i class="fas fa-check"></i> Locker room access</li>
+                        <li><i class="fas fa-check"></i> Free WiFi</li>
+                        <li><i class="fas fa-check"></i> Equipment guidance</li>
+                    </ul>
+                    <button class="join-btn">Enroll Now</button>
+                </div>
+
+                <div class="membership-card">
+                    <div class="badge">SAVE 20%</div>
+                    <h3>1 Year</h3>
+                    <div class="price">₹9,591<span>/year</span></div>
+                    <ul class="features">
+                        <li><i class="fas fa-check"></i> Complete Gym access</li>
+                        <li><i class="fas fa-check"></i> Strength Training equipment</li>
+                        <li><i class="fas fa-check"></i> Locker room access</li>
+                        <li><i class="fas fa-check"></i> Free WiFi</li>
+                        <li><i class="fas fa-check"></i> Equipment guidance</li>
+                    </ul>
+                    <button class="join-btn">Enroll Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2>What Our Members Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"MAX FITNESS completely transformed my fitness journey. The trainers are knowledgeable and supportive!"</p>
+                    <h4>John Smith</h4>
+                    <span>Member for 2 years</span>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"The facilities are top-notch and the community is amazing. I've never felt more motivated to reach my goals!"</p>
+                    <h4>Sarah Johnson</h4>
+                    <span>Member for 1 year</span>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Best gym experience ever! Clean facilities, professional staff, and a welcoming atmosphere. Highly recommended!"</p>
+                    <h4>Mike Davis</h4>
+                    <span>Member for 6 months</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+91 94825 07769</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>info@maxfitness.com</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Address</h4>
+                            <p>Rajiv Gandhi Circle, Laggere Main Rd, Hegganahalli, Bengaluru 560058</p>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="contact-form">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <textarea placeholder="Your Message" rows="5" required></textarea>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>MAX FITNESS</h4>
+                    <p>Your premier fitness destination for strength, health, and transformation.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#facilities">Facilities</a></li>
+                        <li><a href="#locations">Locations</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Hours</h4>
+                    <ul>
+                        <li>Mon-Fri: 6 AM - 11 PM</li>
+                        <li>Sat-Sun: 6 AM - 10 PM</li>
+                        <li>Holidays: 8 AM - 8 PM</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe for fitness tips and updates</p>
+                    <input type="email" placeholder="Your email">
+                    <button>Subscribe</button>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 MAX FITNESS. All rights reserved. | Privacy Policy | Terms of Service</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
