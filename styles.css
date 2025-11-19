@@ -681,13 +681,11 @@ body {
 }
 
 .testimonial-card h4 {
-    color: var(--light-text);
-    margin-bottom: 5px;
+    display: none;
 }
 
 .testimonial-card span {
-    color: var(--accent-color);
-    font-size: 12px;
+    display: none;
 }
 
 /* ===== CONTACT SECTION ===== */
