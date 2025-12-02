@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;500;600;700&family=Rajdhani:wght@500;600;700&family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&family=Oswald:wght@400;500;600;700&display=swap');
 
 * {
     margin: 0;
@@ -20,11 +20,11 @@ html {
 }
 
 body {
-    font-family: 'Rajdhani', 'Oswald', 'Arial', sans-serif;
+    font-family: 'Montserrat', 'Oswald', 'Arial', sans-serif;
     background-color: var(--primary-color);
     color: var(--light-text);
     line-height: 1.6;
-    font-weight: 500;
+    font-weight: 400;
 }
 
 .container {
@@ -67,11 +67,19 @@ body {
 
 .logo-text {
     color: var(--light-text);
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Playfair Display', serif;
     position: relative;
-    font-weight: 700;
+    font-weight: 800;
     line-height: 1;
-    text-transform: uppercase;
+    font-size: 32px;
+    letter-spacing: 1px;
+}
+
+.logo-capital {
+    color: var(--accent-color);
+    font-size: 36px;
+    font-weight: 900;
+    text-shadow: 0 0 15px rgba(230, 57, 70, 0.6);
 }
 
 
@@ -129,8 +137,8 @@ body {
 
 /* ===== HERO SECTION ===== */
 .hero {
-    background: linear-gradient(135deg, rgba(26, 26, 26, 0.7) 0%, rgba(34, 34, 34, 0.7) 100%),
-                url('file.enc') center/cover no-repeat;
+    background: linear-gradient(135deg, rgba(26, 26, 26, 0.75) 0%, rgba(34, 34, 34, 0.75) 100%),
+                url('WhatsApp Image 2025-11-20 at 5.29.37 PM.jpeg') center/cover no-repeat;
     background-size: cover;
     background-position: center;
     min-height: 100vh;
@@ -199,21 +207,27 @@ body {
 }
 
 .hero-title {
-    font-size: 72px;
-    font-weight: 700;
+    font-size: 90px;
+    font-weight: 800;
     color: var(--light-text);
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.9),
+                 0 0 30px rgba(230, 57, 70, 0.4);
     margin-bottom: 20px;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
     animation: fadeInUp 1s ease-out;
-    font-family: 'Oswald', sans-serif;
-    line-height: 1.2;
-    text-transform: uppercase;
+    font-family: 'Playfair Display', serif;
+    line-height: 1.1;
 }
 
-.title-xx {
+.hero-capital {
     color: var(--accent-color);
-    font-weight: 700;
+    font-size: 110px;
+    font-weight: 900;
+    text-shadow: 
+        0 0 20px rgba(230, 57, 70, 0.8),
+        0 0 40px rgba(230, 57, 70, 0.5),
+        3px 3px 10px rgba(0, 0, 0, 1);
+    display: inline-block;
 }
 
 
@@ -386,11 +400,6 @@ body {
     font-family: 'Bebas Neue', sans-serif;
 }
 
-.accent-xx {
-    color: var(--accent-color);
-    font-weight: 700;
-}
-
 .about-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -525,6 +534,58 @@ body {
     line-height: 1.6;
 }
 
+/* ===== GALLERY SECTION ===== */
+.gallery {
+    background-color: var(--primary-color);
+    padding: 80px 0;
+    border-top: 5px solid var(--accent-color);
+}
+
+.gallery h2 {
+    font-size: 56px;
+    color: var(--light-text);
+    margin-bottom: 50px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 400;
+    text-shadow: 0 0 15px rgba(230, 57, 70, 0.3);
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    cursor: pointer;
+    aspect-ratio: 4/3;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.4s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(230, 57, 70, 0.4);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
 /* ===== LOCATIONS SECTION ===== */
 .locations {
     background-color: var(--secondary-color);
@@ -584,6 +645,7 @@ body {
 }
 
 .view-btn {
+    display: block;
     width: 100%;
     background-color: var(--accent-color);
     color: white;
@@ -594,6 +656,8 @@ body {
     font-weight: 600;
     transition: all 0.3s ease;
     margin-top: 15px;
+    text-align: center;
+    text-decoration: none;
 }
 
 .view-btn:hover {
@@ -1067,11 +1131,16 @@ body {
 
     .about h2,
     .facilities h2,
+    .gallery h2,
     .locations h2,
     .membership h2,
     .testimonials h2,
     .contact h2 {
         font-size: 36px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
     }
 
     .facilities-grid,
@@ -1103,6 +1172,18 @@ body {
     .hero-title {
         font-size: 36px;
         margin: 0 10px;
+    }
+
+    .hero-capital {
+        font-size: 42px;
+    }
+
+    .logo-text {
+        font-size: 22px;
+    }
+
+    .logo-capital {
+        font-size: 26px;
     }
 
     .hero-subtitle {
