@@ -84,6 +84,7 @@ body {
     animation: glow-pulse 2s ease-in-out infinite;
     position: relative;
     display: inline-block;
+    letter-spacing: -8px;
 }
 
 .logo-xx::before {
@@ -95,6 +96,7 @@ body {
     -webkit-text-stroke: 2px var(--accent-color);
     z-index: -1;
     animation: stroke-glow 2s ease-in-out infinite;
+    letter-spacing: -8px;
 }
 
 .logo i {
@@ -244,6 +246,7 @@ body {
     animation: title-glow 2s ease-in-out infinite;
     display: inline-block;
     position: relative;
+    letter-spacing: -18px;
 }
 
 .title-xx::before {
@@ -256,6 +259,7 @@ body {
     filter: blur(8px);
     z-index: -1;
     animation: stroke-pulse 2s ease-in-out infinite;
+    letter-spacing: -18px;
 }
 
 @keyframes title-glow {
@@ -433,6 +437,7 @@ body {
         0 0 10px rgba(230, 57, 70, 0.8),
         0 0 20px rgba(230, 57, 70, 0.5);
     font-weight: 900;
+    letter-spacing: -12px;
 }
 
 .about-content {
