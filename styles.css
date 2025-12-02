@@ -58,57 +58,20 @@ body {
 .logo {
     display: flex;
     align-items: center;
-    gap: 5px;
-    font-size: 32px;
-    font-weight: 900;
-    letter-spacing: -1px;
+    gap: 8px;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 1px;
     position: relative;
 }
 
 .logo-text {
     color: var(--light-text);
-    text-shadow: 0 0 20px rgba(230, 57, 70, 0.5);
-    font-family: 'Anton', 'Impact', sans-serif;
+    font-family: 'Oswald', sans-serif;
     position: relative;
-    font-weight: 400;
-    display: flex;
-    align-items: center;
+    font-weight: 700;
     line-height: 1;
-}
-
-.logo-xx {
-    font-size: 36px;
-    font-weight: 900;
-    position: relative;
-    display: inline-flex;
-    letter-spacing: -20px;
-    margin: 0 -2px;
-}
-
-.logo-xx::before {
-    content: 'X';
-    color: var(--light-text);
-    text-shadow: 
-        0 0 15px rgba(255, 255, 255, 0.8),
-        0 0 25px rgba(255, 255, 255, 0.5),
-        3px 3px 6px rgba(0, 0, 0, 0.8);
-    position: relative;
-    z-index: 2;
-    font-family: 'Anton', 'Impact', sans-serif;
-}
-
-.logo-xx::after {
-    content: 'X';
-    color: var(--accent-color);
-    text-shadow: 
-        0 0 15px rgba(230, 57, 70, 1),
-        0 0 25px rgba(230, 57, 70, 0.8),
-        0 0 35px rgba(230, 57, 70, 0.6),
-        3px 3px 6px rgba(0, 0, 0, 0.8);
-    animation: glow-pulse 2s ease-in-out infinite;
-    position: relative;
-    z-index: 1;
-    font-family: 'Anton', 'Impact', sans-serif;
+    text-transform: uppercase;
 }
 
 
@@ -236,52 +199,21 @@ body {
 }
 
 .hero-title {
-    font-size: 110px;
-    font-weight: 400;
+    font-size: 72px;
+    font-weight: 700;
     color: var(--light-text);
-    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9),
-                 0 0 25px rgba(230, 57, 70, 0.6),
-                 0 0 50px rgba(230, 57, 70, 0.4);
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
     margin-bottom: 20px;
     letter-spacing: 2px;
-    animation: slideIn 1s ease-out, glow 3s ease-in-out infinite;
-    font-family: 'Anton', 'Impact', sans-serif;
-    line-height: 1;
+    animation: fadeInUp 1s ease-out;
+    font-family: 'Oswald', sans-serif;
+    line-height: 1.2;
+    text-transform: uppercase;
 }
 
 .title-xx {
-    font-size: 120px;
-    display: inline-flex;
-    position: relative;
-    letter-spacing: -55px;
-    margin: 0 -5px;
-}
-
-.title-xx::before {
-    content: 'X';
-    color: var(--light-text);
-    text-shadow: 
-        0 0 20px rgba(255, 255, 255, 0.9),
-        0 0 40px rgba(255, 255, 255, 0.6),
-        4px 4px 8px rgba(0, 0, 0, 1);
-    position: relative;
-    z-index: 2;
-    font-family: 'Anton', 'Impact', sans-serif;
-}
-
-.title-xx::after {
-    content: 'X';
     color: var(--accent-color);
-    text-shadow: 
-        0 0 20px rgba(230, 57, 70, 1),
-        0 0 35px rgba(230, 57, 70, 1),
-        0 0 50px rgba(230, 57, 70, 0.8),
-        0 0 70px rgba(230, 57, 70, 0.6),
-        4px 4px 8px rgba(0, 0, 0, 1);
-    animation: title-glow 2s ease-in-out infinite;
-    position: relative;
-    z-index: 1;
-    font-family: 'Anton', 'Impact', sans-serif;
+    font-weight: 700;
 }
 
 
@@ -455,31 +387,8 @@ body {
 }
 
 .accent-xx {
-    font-size: 60px;
-    font-weight: 900;
-    letter-spacing: -30px;
-    display: inline-flex;
-    position: relative;
-    margin: 0 -3px;
-}
-
-.accent-xx::before {
-    content: 'X';
-    color: var(--light-text);
-    text-shadow: 
-        0 0 12px rgba(255, 255, 255, 0.7),
-        2px 2px 4px rgba(0, 0, 0, 0.8);
-    font-family: 'Anton', 'Impact', sans-serif;
-}
-
-.accent-xx::after {
-    content: 'X';
     color: var(--accent-color);
-    text-shadow: 
-        0 0 15px rgba(230, 57, 70, 0.9),
-        0 0 25px rgba(230, 57, 70, 0.6),
-        2px 2px 4px rgba(0, 0, 0, 0.8);
-    font-family: 'Anton', 'Impact', sans-serif;
+    font-weight: 700;
 }
 
 .about-content {
