@@ -74,30 +74,36 @@ body {
 }
 
 .logo-xx {
-    color: var(--accent-color);
     font-size: 32px;
     font-weight: 900;
+    position: relative;
+    display: inline-block;
+    letter-spacing: -18px;
+}
+
+.logo-xx::before {
+    content: 'X';
+    color: var(--light-text);
+    text-shadow: 
+        0 0 10px rgba(255, 255, 255, 0.5),
+        0 0 20px rgba(255, 255, 255, 0.3);
+    position: relative;
+    z-index: 2;
+}
+
+.logo-xx::after {
+    content: 'X';
+    color: var(--accent-color);
     text-shadow: 
         0 0 10px rgba(230, 57, 70, 0.8),
         0 0 20px rgba(230, 57, 70, 0.6),
         0 0 30px rgba(230, 57, 70, 0.4);
     animation: glow-pulse 2s ease-in-out infinite;
     position: relative;
-    display: inline-block;
-    letter-spacing: -8px;
+    z-index: 1;
 }
 
-.logo-xx::before {
-    content: 'XX';
-    position: absolute;
-    top: 0;
-    left: 0;
-    color: transparent;
-    -webkit-text-stroke: 2px var(--accent-color);
-    z-index: -1;
-    animation: stroke-glow 2s ease-in-out infinite;
-    letter-spacing: -8px;
-}
+
 
 .logo i {
     font-size: 28px;
@@ -235,8 +241,26 @@ body {
 }
 
 .title-xx {
-    color: var(--accent-color);
     font-size: 90px;
+    display: inline-block;
+    position: relative;
+    letter-spacing: -40px;
+}
+
+.title-xx::before {
+    content: 'X';
+    color: var(--light-text);
+    text-shadow: 
+        0 0 15px rgba(255, 255, 255, 0.6),
+        0 0 30px rgba(255, 255, 255, 0.4),
+        2px 2px 4px rgba(0, 0, 0, 0.9);
+    position: relative;
+    z-index: 2;
+}
+
+.title-xx::after {
+    content: 'X';
+    color: var(--accent-color);
     text-shadow: 
         0 0 10px rgba(230, 57, 70, 1),
         0 0 20px rgba(230, 57, 70, 0.8),
@@ -244,23 +268,11 @@ body {
         0 0 40px rgba(230, 57, 70, 0.4),
         2px 2px 4px rgba(0, 0, 0, 0.9);
     animation: title-glow 2s ease-in-out infinite;
-    display: inline-block;
     position: relative;
-    letter-spacing: -18px;
+    z-index: 1;
 }
 
-.title-xx::before {
-    content: 'XX';
-    position: absolute;
-    top: 0;
-    left: 0;
-    color: transparent;
-    -webkit-text-stroke: 3px var(--accent-color);
-    filter: blur(8px);
-    z-index: -1;
-    animation: stroke-pulse 2s ease-in-out infinite;
-    letter-spacing: -18px;
-}
+
 
 @keyframes title-glow {
     0%, 100% {
@@ -431,13 +443,25 @@ body {
 }
 
 .accent-xx {
-    color: var(--accent-color);
     font-size: 52px;
+    font-weight: 900;
+    letter-spacing: -24px;
+    display: inline-block;
+    position: relative;
+}
+
+.accent-xx::before {
+    content: 'X';
+    color: var(--light-text);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.accent-xx::after {
+    content: 'X';
+    color: var(--accent-color);
     text-shadow: 
         0 0 10px rgba(230, 57, 70, 0.8),
         0 0 20px rgba(230, 57, 70, 0.5);
-    font-weight: 900;
-    letter-spacing: -12px;
 }
 
 .about-content {
