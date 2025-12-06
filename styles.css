@@ -665,6 +665,18 @@ body {
     transform: translateY(-2px);
 }
 
+.map-container {
+    margin-top: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.map-container iframe {
+    display: block;
+    border-radius: 10px;
+}
+
 /* ===== MEMBERSHIP SECTION ===== */
 .membership {
     background-color: var(--primary-color);
