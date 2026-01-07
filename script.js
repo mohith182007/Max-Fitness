@@ -86,10 +86,11 @@ document.addEventListener('DOMContentLoaded', function() {
             // Get form values
             const name = contactForm.querySelector('input[name="from_name"]').value;
             const email = contactForm.querySelector('input[name="from_email"]').value;
+            const phone = contactForm.querySelector('input[name="phone_number"]').value;
             const message = contactForm.querySelector('textarea[name="message"]').value;
             
             // Simple validation
-            if (name && email && message) {
+            if (name && email && phone && message) {
                 // Show loading state
                 const submitBtn = contactForm.querySelector('.submit-btn');
                 const originalText = submitBtn.textContent;
@@ -100,6 +101,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const templateParams = {
                     from_name: name,
                     from_email: email,
+                    phone_number: phone,
                     message: message,
                     to_email: 'maxxfitnesswebsite@gmail.com',
                     reply_to: email
@@ -114,7 +116,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         console.log('Failed to send email:', error);
                         // Fallback to mailto link
                         const subject = encodeURIComponent(`Contact from ${name} - Maxx Fitness Website`);
-                        const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+                        const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nPhone: ${phone}\n\nMessage:\n${message}`);
                         const mailtoLink = `mailto:maxxfitnesswebsite@gmail.com?subject=${subject}&body=${body}`;
                         window.open(mailtoLink);
                         alert('Opening your email client to send the message. Please send the pre-filled email.');
