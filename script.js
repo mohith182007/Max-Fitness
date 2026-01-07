@@ -72,22 +72,58 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(card);
     });
 
-    // Form submission
+    // Initialize EmailJS
+    (function() {
+        emailjs.init("94SJeKZrQ9ahy-X0p"); // Replace with your EmailJS user ID
+    })();
+
+    // Form submission with EmailJS
     const contactForm = document.querySelector('.contact-form');
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
             // Get form values
-            const name = contactForm.querySelector('input[type="text"]').value;
-            const email = contactForm.querySelector('input[type="email"]').value;
-            const message = contactForm.querySelector('textarea').value;
+            const name = contactForm.querySelector('input[name="from_name"]').value;
+            const email = contactForm.querySelector('input[name="from_email"]').value;
+            const message = contactForm.querySelector('textarea[name="message"]').value;
             
             // Simple validation
             if (name && email && message) {
-                // Show success message
-                alert('Thank you for your message! We will get back to you soon.');
-                contactForm.reset();
+                // Show loading state
+                const submitBtn = contactForm.querySelector('.submit-btn');
+                const originalText = submitBtn.textContent;
+                submitBtn.textContent = 'Sending...';
+                submitBtn.disabled = true;
+
+                // Send email using EmailJS
+                const templateParams = {
+                    from_name: name,
+                    from_email: email,
+                    message: message,
+                    to_email: 'maxxfitnesswebsite@gmail.com',
+                    reply_to: email
+                };
+
+                emailjs.send('service_jnvacog', 'template_a6lnazj', templateParams)
+                    .then(function(response) {
+                        console.log('Email sent successfully:', response);
+                        alert('Thank you for your message! We will get back to you soon.');
+                        contactForm.reset();
+                    }, function(error) {
+                        console.log('Failed to send email:', error);
+                        // Fallback to mailto link
+                        const subject = encodeURIComponent(`Contact from ${name} - Maxx Fitness Website`);
+                        const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+                        const mailtoLink = `mailto:maxxfitnesswebsite@gmail.com?subject=${subject}&body=${body}`;
+                        window.open(mailtoLink);
+                        alert('Opening your email client to send the message. Please send the pre-filled email.');
+                    })
+                    .finally(function() {
+                        // Reset button state
+                        submitBtn.textContent = originalText;
+                        submitBtn.disabled = false;
+                    });
             } else {
                 alert('Please fill in all fields.');
             }
