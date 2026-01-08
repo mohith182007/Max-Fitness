@@ -1,9 +1,4 @@
 {
-  "name": "max-fitness",
-  "version": 2,
-  "buildCommand": "echo 'No build required'",
-  "outputDirectory": ".",
-  "public": true,
   "headers": [
     {
       "source": "/sitemap.xml",
