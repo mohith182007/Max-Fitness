@@ -495,6 +495,43 @@ body {
     position: relative;
 }
 
+.logo-image {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.logo-image:hover {
+    transform: scale(1.05);
+}
+
+.whatsapp-logo-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    background: linear-gradient(135deg, #25D366, #128C7E);
+    border-radius: 50%;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+}
+
+.whatsapp-logo-icon:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+    background: linear-gradient(135deg, #128C7E, #25D366);
+}
+
+.whatsapp-logo-icon i {
+    font-size: 24px;
+}
+
 .logo-text {
     color: var(--light-text);
     font-family: 'Playfair Display', serif;
@@ -2288,6 +2325,19 @@ body {
 
     .logo-capital {
         font-size: 26px;
+    }
+
+    .logo-image {
+        height: 40px;
+    }
+
+    .whatsapp-logo-icon {
+        width: 36px;
+        height: 36px;
+    }
+
+    .whatsapp-logo-icon i {
+        font-size: 20px;
     }
 
     .hero-subtitle {
