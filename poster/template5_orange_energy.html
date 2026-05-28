@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MaxGym - Get Fit Offer</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;800&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #1a1a1a;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .poster {
+    width: 800px;
+    min-height: 1100px;
+    background: #fff;
+    position: relative;
+    overflow: hidden;
+    color: #222;
+    text-align: center;
+  }
+
+  .top-section {
+    background: linear-gradient(135deg, #ff6b00, #ff8c33);
+    padding: 40px 40px 80px;
+    position: relative;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  }
+
+  .top-section::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    pointer-events: none;
+  }
+
+  .logo-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    margin-bottom: 25px;
+  }
+
+  .logo-container {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid rgba(255,255,255,0.8);
+    flex-shrink: 0;
+  }
+
+  .logo-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .gym-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 52px;
+    color: #fff;
+    letter-spacing: 6px;
+    line-height: 1;
+  }
+
+  .offer-tag {
+    display: inline-block;
+    background: #fff;
+    color: #ff6b00;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 4px;
+    padding: 8px 30px;
+    border-radius: 30px;
+    margin-top: 15px;
+  }
+
+  .big-number {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 140px;
+    color: #fff;
+    line-height: 1;
+    margin-top: 10px;
+    text-shadow: 3px 3px 0px rgba(0,0,0,0.1);
+  }
+
+  .big-number sup {
+    font-size: 50px;
+    vertical-align: top;
+    margin-top: 20px;
+    display: inline-block;
+  }
+
+  .percent-off {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 30px;
+    color: rgba(255,255,255,0.9);
+    letter-spacing: 15px;
+  }
+
+  .middle-content {
+    padding: 20px 40px 40px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    color: #ff6b00;
+    letter-spacing: 5px;
+    margin-bottom: 25px;
+  }
+
+  .cards {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+  }
+
+  .card {
+    background: #fafafa;
+    border: 2px solid #eee;
+    border-radius: 16px;
+    padding: 25px 15px;
+    width: 170px;
+    transition: all 0.3s;
+  }
+
+  .card:hover {
+    border-color: #ff6b00;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(255,107,0,0.1);
+  }
+
+  .card.popular {
+    border-color: #ff6b00;
+    background: #fff8f0;
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(255,107,0,0.15);
+    position: relative;
+  }
+
+  .card.popular::before {
+    content: 'POPULAR';
+    position: absolute;
+    top: -10px; left: 50%;
+    transform: translateX(-50%);
+    background: #ff6b00;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    padding: 4px 14px;
+    border-radius: 20px;
+  }
+
+  .card-duration {
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #999;
+    margin-bottom: 12px;
+  }
+
+  .card-old {
+    font-size: 16px;
+    color: #bbb;
+    text-decoration: line-through;
+  }
+
+  .card-price {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 38px;
+    color: #ff6b00;
+    line-height: 1.1;
+  }
+
+  .card-per {
+    font-size: 12px;
+    color: #999;
+  }
+
+  .card-save {
+    display: inline-block;
+    background: #fff0e0;
+    color: #ff6b00;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-top: 8px;
+  }
+
+  .benefits {
+    display: flex;
+    justify-content: space-around;
+    max-width: 600px;
+    margin: 0 auto 30px;
+    text-align: center;
+  }
+
+  .benefit {
+    width: 100px;
+  }
+
+  .benefit-icon {
+    font-size: 30px;
+    margin-bottom: 8px;
+  }
+
+  .benefit-text {
+    font-size: 11px;
+    font-weight: 600;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .cta-orange {
+    display: inline-block;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px;
+    color: #fff;
+    background: linear-gradient(135deg, #ff6b00, #ff8c33);
+    padding: 16px 60px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    letter-spacing: 4px;
+    box-shadow: 0 8px 25px rgba(255,107,0,0.3);
+  }
+
+  .note {
+    font-size: 12px;
+    color: #bbb;
+    margin-top: 12px;
+  }
+
+  .bottom-bar {
+    background: #222;
+    color: #888;
+    padding: 16px;
+    font-size: 13px;
+    margin-top: 30px;
+  }
+
+  .bottom-bar span {
+    color: #ff6b00;
+  }
+</style>
+</head>
+<body>
+  <div class="poster">
+    <div class="top-section">
+      <div class="logo-row">
+        <div class="logo-container">
+          <img src="logo.jpg" alt="MaxGym Logo">
+        </div>
+        <h1 class="gym-name">MAXGYM</h1>
+      </div>
+
+      <div class="offer-tag">🔥 Get Fit Festival</div>
+
+      <div class="big-number">45<sup>%</sup></div>
+      <div class="percent-off">DISCOUNT</div>
+    </div>
+
+    <div class="middle-content">
+      <p class="section-title">Choose Your Plan</p>
+
+      <div class="cards">
+        <div class="card">
+          <div class="card-duration">1 Month</div>
+          <div class="card-old">₹2,500</div>
+          <div class="card-price">₹1,375</div>
+          <div class="card-per">/month</div>
+          <div class="card-save">Save ₹1,125</div>
+        </div>
+        <div class="card popular">
+          <div class="card-duration">6 Months</div>
+          <div class="card-old">₹12,000</div>
+          <div class="card-price">₹6,600</div>
+          <div class="card-per">/6 months</div>
+          <div class="card-save">Save ₹5,400</div>
+        </div>
+        <div class="card">
+          <div class="card-duration">12 Months</div>
+          <div class="card-old">₹20,000</div>
+          <div class="card-price">₹11,000</div>
+          <div class="card-per">/year</div>
+          <div class="card-save">Save ₹9,000</div>
+        </div>
+      </div>
+
+      <div class="benefits">
+        <div class="benefit">
+          <div class="benefit-icon">🏋️</div>
+          <div class="benefit-text">Modern<br>Equipment</div>
+        </div>
+        <div class="benefit">
+          <div class="benefit-icon">🥊</div>
+          <div class="benefit-text">Boxing<br>Ring</div>
+        </div>
+        <div class="benefit">
+          <div class="benefit-icon">🏃</div>
+          <div class="benefit-text">Cardio<br>Zone</div>
+        </div>
+        <div class="benefit">
+          <div class="benefit-icon">🍎</div>
+          <div class="benefit-text">Diet<br>Plans</div>
+        </div>
+        <div class="benefit">
+          <div class="benefit-icon">📱</div>
+          <div class="benefit-text">Track<br>Progress</div>
+        </div>
+      </div>
+
+      <button class="cta-orange">Start Your Journey</button>
+      <p class="note">* No joining fee. Cancel anytime.</p>
+    </div>
+
+    <div class="bottom-bar">
+      📞 <span>+91 98765 43210</span> &nbsp;|&nbsp; 📍 <span>MaxGym, Main Road</span> &nbsp;|&nbsp; 🌐 <span>www.maxgym.com</span>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maxx Fitness - Ugadi Special Discount</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@400;700&display=swap');
+  
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  @page {
+    size: 600px 1070px;
+    margin: 0;
+  }
+
+  html, body {
+    width: 600px;
+    height: 1070px;
+    margin: 0;
+    padding: 0;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+  
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #0a0a0a;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  .poster {
+    width: 600px;
+    height: 1070px;
+    background: linear-gradient(175deg, rgba(10,10,10,0.65) 0%, rgba(26,0,0,0.72) 40%, rgba(40,0,0,0.68) 100%), url('logo.jpg') center/100% auto no-repeat;
+    background-color: #0d0d0d;
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+    text-align: center;
+    padding: 30px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .poster::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 70% 30%, rgba(220, 20, 20, 0.15) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .diagonal-stripe {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 8px;
+    background: repeating-linear-gradient(90deg, #dc1414, #dc1414 20px, #ff4444 20px, #ff4444 40px);
+  }
+
+  .diagonal-stripe-bottom {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 8px;
+    background: repeating-linear-gradient(90deg, #dc1414, #dc1414 20px, #ff4444 20px, #ff4444 40px);
+  }
+
+  .gym-badge {
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    width: 65px;
+    height: 65px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+    z-index: 2;
+    border: 2px solid rgba(220, 20, 20, 0.6);
+  }
+
+  .gym-badge img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .gym-name {
+    font-family: 'Oswald', sans-serif;
+    font-size: 46px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    color: #fff;
+    margin-bottom: 4px;
+    text-shadow: 0 2px 15px rgba(0,0,0,0.6);
+  }
+
+  .tagline {
+    font-size: 11px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: #999;
+    margin-bottom: 20px;
+  }
+
+  .discount-badge {
+    display: inline-block;
+    background: #dc1414;
+    color: #fff;
+    font-family: 'Oswald', sans-serif;
+    font-size: 74px;
+    font-weight: 700;
+    padding: 8px 40px;
+    transform: skewX(-5deg);
+    margin: 12px 0;
+    box-shadow: 0 10px 40px rgba(220, 20, 20, 0.5);
+  }
+
+  .discount-badge span {
+    font-size: 36px;
+    vertical-align: super;
+  }
+
+  .discount-label {
+    font-family: 'Oswald', sans-serif;
+    font-size: 22px;
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    color: #ff4444;
+    margin-bottom: 12px;
+  }
+
+  .plans {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin: 18px 0;
+    flex-wrap: wrap;
+  }
+
+  .plan {
+    background: rgba(0, 0, 0, 0.45);
+    border: 1px solid rgba(220, 20, 20, 0.3);
+    border-radius: 10px;
+    padding: 16px 12px;
+    width: 165px;
+    backdrop-filter: blur(5px);
+  }
+
+  .plan:nth-child(2) {
+    border-color: #dc1414;
+    background: rgba(220, 20, 20, 0.1);
+    transform: scale(1.05);
+  }
+
+  .plan-duration {
+    font-family: 'Oswald', sans-serif;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #bbb;
+    margin-bottom: 6px;
+  }
+
+  .plan-price-old {
+    font-size: 15px;
+    color: #666;
+    text-decoration: line-through;
+    margin-bottom: 3px;
+  }
+
+  .plan-price {
+    font-family: 'Oswald', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: #dc1414;
+  }
+
+  .plan-price small {
+    font-size: 16px;
+    color: #888;
+  }
+
+  .plan-save {
+    display: inline-block;
+    background: rgba(220, 20, 20, 0.2);
+    color: #ff4444;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-top: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .features {
+    margin: 18px auto;
+    max-width: 420px;
+    text-align: left;
+  }
+
+  .features li {
+    list-style: none;
+    padding: 5px 0;
+    font-size: 13px;
+    color: #ddd;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .features li::before {
+    content: '✓';
+    color: #dc1414;
+    font-weight: 700;
+    margin-right: 12px;
+  }
+
+  .cta {
+    display: inline-block;
+    background: #dc1414;
+    color: #fff;
+    font-family: 'Oswald', sans-serif;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    padding: 14px 45px;
+    border: none;
+    cursor: pointer;
+    margin-top: 12px;
+  }
+
+  .cta:hover {
+    background: #ff2222;
+    box-shadow: 0 5px 25px rgba(220, 20, 20, 0.5);
+  }
+
+  .limited {
+    font-size: 11px;
+    color: #777;
+    margin-top: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .contact {
+    margin-top: 12px;
+    font-size: 11px;
+    color: #999;
+    line-height: 1.7;
+  }
+</style>
+</head>
+<body>
+  <div class="poster">
+    <div class="diagonal-stripe"></div>
+
+    <div class="gym-badge">
+      <img src="Screenshot%20From%202025-12-02%2019-17-43.png" alt="Maxx Fitness">
+    </div>
+
+    <div style="margin-top: 40px;"></div>
+    <h1 class="gym-name">Maxx Fitness</h1>
+    <p class="tagline">Transform Your Body, Transform Your Life</p>
+
+    <div class="discount-label">Ugadi Special</div>
+
+    <div class="discount-badge">50<span>%</span> OFF</div>
+
+    <div class="discount-label">On All Memberships</div>
+
+    <div class="plans">
+      <div class="plan">
+        <div class="plan-duration">3 Months</div>
+        <div class="plan-price-old">₹5,000</div>
+        <div class="plan-price">₹3,500 <small>/3mo</small></div>
+        <div class="plan-save">Save ₹1,500</div>
+      </div>
+      <div class="plan">
+        <div class="plan-duration">6 Months</div>
+        <div class="plan-price-old">₹7,500</div>
+        <div class="plan-price">₹5,500 <small>/6mo</small></div>
+        <div class="plan-save">Save ₹2,000</div>
+      </div>
+      <div class="plan">
+        <div class="plan-duration">1 Year</div>
+        <div class="plan-price-old">₹12,000</div>
+        <div class="plan-price">₹7,500 <small>/yr</small></div>
+        <div class="plan-save">Save ₹4,500</div>
+      </div>
+    </div>
+
+    <ul class="features">
+      <li>Full Cardio Zone & Gym access</li>
+      <li>Strength Training & Free Weights</li>
+      <li>Personal Training from certified trainers</li>
+      <li>Nutrition Coaching & Diet guidance</li>
+      <li>Locker room access & Free WiFi</li>
+    </ul>
+
+    <button class="cta">Join Now</button>
+    <p class="limited">* Limited time offer — Valid till April 15th</p>
+
+    <div class="contact">
+      📞 +91 94825 07769 &nbsp;|&nbsp; ✉️ maxxfitness4925@gmail.com<br>
+      📍 Rajiv Gandhi Circle, Laggere Main Rd, Hegganahalli, Bengaluru 560058<br>
+      🌐 maxxfitnesslaggere.in &nbsp;|&nbsp; 💬 wa.me/919482507769
+    </div>
+
+    <div class="diagonal-stripe-bottom"></div>
+  </div>
+</body>
+</html>

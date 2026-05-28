@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MaxX Fitness - Vibrant Ugadi 2026</title>
+    <style>
+        :root {
+            --gold: #FFD700;
+            --purple-bg: #4B0082;
+            --green-leaf: #228B22;
+            --mango-yellow: #FFB300;
+            --text-white: #FFFFFF;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;0,900;1,700&family=Noto+Sans+Kannada:wght@700&display=swap');
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #111;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .poster {
+            width: 1080px;
+            height: 1920px;
+            background: radial-gradient(circle at 50% 40%, #7B1FA2 0%, #4A148C 40%, #120024 100%);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 0 0 50px rgba(0,0,0,0.8);
+            transform-origin: top center;
+            transform: scale(calc(100vh / 1950));
+        }
+
+        /* Festive Bokeh Lights */
+        .bokeh {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0; left: 0;
+            background-image: 
+                radial-gradient(circle at 15% 25%, rgba(255, 215, 0, 0.4) 0%, transparent 12%),
+                radial-gradient(circle at 85% 35%, rgba(255, 179, 0, 0.3) 0%, transparent 15%),
+                radial-gradient(circle at 50% 60%, rgba(34, 139, 34, 0.3) 0%, transparent 20%),
+                radial-gradient(circle at 20% 75%, rgba(255, 215, 0, 0.25) 0%, transparent 10%),
+                radial-gradient(circle at 80% 85%, rgba(255, 179, 0, 0.4) 0%, transparent 15%);
+            pointer-events: none;
+            z-index: 0;
+            mix-blend-mode: screen;
+        }
+
+        /* Top Arched Text (20%) */
+        .top-section {
+            height: 384px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            padding-bottom: 30px;
+        }
+
+        .kannada-text {
+            fill: var(--gold);
+            font-family: 'Noto Sans Kannada', sans-serif;
+            font-size: 85px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            filter: drop-shadow(0px 8px 15px rgba(0, 0, 0, 0.6));
+        }
+
+        .mango-leaf-arch {
+            position: absolute;
+            top: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 900px;
+            height: 250px;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* Center Art */
+        .center-art {
+            position: relative;
+            width: 100%;
+            height: 576px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2;
+        }
+
+        .center-svg {
+            width: 900px;
+            height: 900px;
+            filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.6));
+            margin-top: -150px;
+        }
+
+        /* Middle Text (30% equivalent context) */
+        .middle-text {
+            height: 480px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            z-index: 10;
+            padding: 0 60px;
+        }
+
+        .middle-text h1 {
+            font-size: 75px;
+            font-weight: 900;
+            color: var(--text-white);
+            line-height: 1.3;
+            text-shadow: 0 10px 20px rgba(0,0,0,0.9);
+        }
+
+        /* Bottom Section (25%) */
+        .bottom-section {
+            height: 480px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 60px;
+            background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 60%, transparent 100%);
+            z-index: 2;
+        }
+
+        .slogan {
+            font-size: 70px;
+            font-weight: 700;
+            font-style: italic;
+            color: var(--gold);
+            max-width: 55%;
+            line-height: 1.2;
+            text-shadow: 3px 3px 0 #000, -1px -1px 0 #000, 0 8px 20px rgba(0,0,0,0.9);
+        }
+
+        .logo-container {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            position: relative;
+        }
+
+        .logo-container img {
+            height: 55%;
+            max-width: 400px;
+            object-fit: contain;
+            /* Smoky / glowing red/black effect around the original logo */
+            filter: drop-shadow(0 0 35px rgba(255, 50, 50, 0.4)) drop-shadow(0 0 60px rgba(0, 0, 0, 0.9));
+            position: relative;
+            z-index: 3;
+        }
+
+        /* Vibrant Decorative Background Rangoli Pattern */
+        .bg-rangoli {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 1400px;
+            height: 1400px;
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: 0;
+            mix-blend-mode: overlay;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <div class="poster">
+        <div class="bokeh"></div>
+
+        <!-- Vibrant Background Rangoli -->
+        <svg class="bg-rangoli" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <pattern id="rangoli" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                    <circle cx="10" cy="10" r="8" fill="none" stroke="#FFD700" stroke-width="0.8"/>
+                    <path d="M10 0 L10 20 M0 10 L20 10 M3 3 L17 17 M3 17 L17 3" stroke="#FFB300" stroke-width="0.4"/>
+                    <circle cx="10" cy="10" r="4" fill="none" stroke="#228B22" stroke-width="0.6"/>
+                </pattern>
+            </defs>
+            <rect x="0" y="0" width="100" height="100" fill="url(#rangoli)"/>
+        </svg>
+
+        <!-- Top Arched Text & Mango Leaves -->
+        <div class="top-section">
+            <svg class="mango-leaf-arch" viewBox="0 0 900 250">
+                <path d="M 50 180 Q 200 10 450 10 Q 700 10 850 180" fill="none" stroke="#228B22" stroke-width="8" stroke-dasharray="30 20"/>
+                <!-- Simplistic leaf representations -->
+                <path d="M 200 60 Q 180 20 150 40 Q 170 80 200 60" fill="#228B22"/>
+                <path d="M 300 30 Q 280 -10 250 10 Q 270 50 300 30" fill="#32CD32"/>
+                <path d="M 450 10 Q 430 -30 400 -10 Q 420 30 450 10" fill="#228B22"/>
+                <path d="M 600 30 Q 620 -10 650 10 Q 630 50 600 30" fill="#32CD32"/>
+                <path d="M 700 60 Q 720 20 750 40 Q 730 80 700 60" fill="#228B22"/>
+            </svg>
+            <svg width="900" height="250" viewBox="0 0 900 250">
+                <path id="arch" d="M 50,220 A 600,600 0 0,1 850,220" fill="transparent" />
+                <text class="kannada-text">
+                    <textPath href="#arch" startOffset="50%" text-anchor="middle">
+                        ಶುಭ ಯುಗಾಡಿ ೨೦೨೬!
+                    </textPath>
+                </text>
+            </svg>
+        </div>
+
+        <!-- Center Art: Golden Kalash, Colorful Leaves, Dumbbell Diyas, Yogi -->
+        <div class="center-art">
+            <svg class="center-svg" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+                <!-- Glowing Aura -->
+                <circle cx="250" cy="270" r="180" fill="none" stroke="rgba(255,215,0,0.15)" stroke-width="25"/>
+                <circle cx="250" cy="270" r="140" fill="rgba(255, 215, 0, 0.05)" stroke="rgba(255,179,0,0.3)" stroke-width="5" stroke-dasharray="10 10"/>
+                
+                <!-- Gym Rangoli Base / Plate -->
+                <ellipse cx="250" cy="450" rx="200" ry="30" fill="#4B0082" stroke="#FFD700" stroke-width="3"/>
+                <ellipse cx="250" cy="450" rx="180" ry="20" fill="none" stroke="#FFB300" stroke-width="3" stroke-dasharray="15 15"/>
+                
+                <!-- Dumbbell Shaped Diyas -->
+                <!-- Left Diya -->
+                <rect x="70" y="420" width="10" height="30" fill="#444"/>
+                <rect x="65" y="415" width="20" height="10" fill="#222"/>
+                <rect x="65" y="445" width="20" height="10" fill="#222"/>
+                <path d="M 65 415 C 65 400, 85 400, 85 415 Z" fill="#FFD700"/>
+                <path d="M 75 410 Q 70 390 75 380 Q 80 390 75 410" fill="#FF4500"/>
+                
+                <!-- Right Diya -->
+                <rect x="420" y="420" width="10" height="30" fill="#444"/>
+                <rect x="415" y="415" width="20" height="10" fill="#222"/>
+                <rect x="415" y="445" width="20" height="10" fill="#222"/>
+                <path d="M 415 415 C 415 400, 435 400, 435 415 Z" fill="#FFD700"/>
+                <path d="M 425 410 Q 420 390 425 380 Q 430 390 425 410" fill="#FF4500"/>
+
+                <!-- Golden Kalash -->
+                <path d="M 190 430 C 140 430, 130 300, 190 260 L 250 270 L 310 260 C 370 300, 360 430, 310 430 Z" fill="url(#goldGrad)" stroke="#B8860B" stroke-width="4"/>
+                <defs>
+                    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stop-color="#DAA520"/>
+                        <stop offset="50%" stop-color="#FFDF00"/>
+                        <stop offset="100%" stop-color="#B8860B"/>
+                    </linearGradient>
+                </defs>
+                <path d="M 170 260 Q 250 280 330 260" fill="none" stroke="#FFD700" stroke-width="5"/>
+                <path d="M 210 240 L 290 240 L 280 260 L 220 260 Z" fill="#FFB300"/>
+                <path d="M 220 380 L 280 380 M 200 350 L 300 350" stroke="#B8860B" stroke-width="3"/>
+
+                <!-- Colorful Mango, Neem & Bananas around Kalash -->
+                <!-- Left Leaves -->
+                <path d="M 220 260 Q 120 180 140 100 Q 180 150 220 230" fill="#228B22" stroke="#006400" stroke-width="2"/>
+                <path d="M 230 260 Q 140 130 180 60 Q 220 120 240 230" fill="#32CD32" stroke="#006400" stroke-width="2"/>
+                <!-- Right Leaves -->
+                <path d="M 280 260 Q 380 180 360 100 Q 320 150 280 230" fill="#228B22" stroke="#006400" stroke-width="2"/>
+                <path d="M 270 260 Q 360 130 320 60 Q 280 120 260 230" fill="#32CD32" stroke="#006400" stroke-width="2"/>
+                
+                <!-- Bananas -->
+                <path d="M 200 250 Q 150 280 160 320 Q 170 290 210 260" fill="#FFD700" stroke="#DAA520" stroke-width="2"/>
+                <path d="M 300 250 Q 350 280 340 320 Q 330 290 290 260" fill="#FFD700" stroke="#DAA520" stroke-width="2"/>
+
+                <!-- Dumbbell "Coconut" / Fruit on top -->
+                <circle cx="250" cy="190" r="50" fill="#8B4513"/>
+                <circle cx="250" cy="190" r="50" fill="url(#cocoGrad)"/>
+                <defs>
+                    <radialGradient id="cocoGrad" cx="30%" cy="30%" r="70%">
+                        <stop offset="0%" stop-color="#D2691E"/>
+                        <stop offset="100%" stop-color="#8B4513"/>
+                    </radialGradient>
+                </defs>
+                <!-- Weight plate ridges on coconut in gold -->
+                <line x1="215" y1="155" x2="285" y2="225" stroke="#FFD700" stroke-width="2"/>
+                <line x1="285" y1="155" x2="215" y2="225" stroke="#FFD700" stroke-width="2"/>
+                <circle cx="250" cy="190" r="20" fill="none" stroke="#FFB300" stroke-width="4"/>
+
+                <!-- Yogi Warrior Pose Silhouette overlaid inside the Kalash -->
+                <g stroke="#FFFFFF" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <!-- Head -->
+                    <circle cx="250" cy="310" r="9" fill="#FFFFFF"/>
+                    <!-- Body/Torso -->
+                    <path d="M 250 320 L 250 360" stroke-width="5"/>
+                    <!-- Arms Extended -->
+                    <path d="M 205 330 L 295 330" stroke-width="5"/>
+                    <!-- Legs in Warrior Stance -->
+                    <path d="M 250 360 L 210 400 M 250 360 L 290 400 M 290 400 L 290 420" stroke-width="5"/>
+                </g>
+            </svg>
+        </div>
+
+        <!-- Middle Text -->
+        <div class="middle-text">
+            <h1>MaxX Fitness<br>Wishes You All<br>Happy Ugadi</h1>
+        </div>
+
+        <!-- Bottom Section: Slogan & Logo -->
+        <div class="bottom-section">
+            <div class="slogan">
+                This Ugadi,<br>
+                Be Stronger!
+            </div>
+            <div class="logo-container">
+                <!-- MaxX Fitness logo in ORIGINAL red/black colors with smoky effect -->
+                <img src="logo.jpg" alt="MaxX Fitness Logo">
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

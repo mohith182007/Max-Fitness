@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gym & Fitness - Modern Grids Flyer</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&family=Bebas+Neue&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  @page {
+    size: 600px 850px;
+    margin: 0;
+  }
+
+  html, body {
+    width: 600px;
+    margin: 0 auto;
+    padding: 0;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    background: #888;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  .flyer {
+    width: 600px;
+    background: #000;
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+  }
+
+  /* ═══════════════════════════════════
+     TOP HEADER
+  ═══════════════════════════════════ */
+  .top-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 30px;
+    background: #000;
+    border-bottom: 3px solid #fff;
+  }
+
+  .logo-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .logo-box {
+    width: 55px;
+    height: 55px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    color: #000;
+    letter-spacing: 1px;
+    font-weight: 700;
+  }
+
+  .logo-text h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #fff;
+    line-height: 1.1;
+  }
+
+  .logo-text p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 7px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #999;
+    margin-top: 2px;
+  }
+
+  .header-contact {
+    text-align: right;
+  }
+
+  .header-contact p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 8px;
+    color: #aaa;
+    letter-spacing: 1px;
+    line-height: 1.8;
+  }
+
+  .header-contact .phone-number {
+    font-size: 13px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 2px;
+  }
+
+  /* ═══════════════════════════════════
+     HERO SECTION
+  ═══════════════════════════════════ */
+  .hero-section {
+    position: relative;
+    padding: 40px 30px;
+    text-align: center;
+    background: #0a0a0a;
+  }
+
+  .hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: 
+      linear-gradient(135deg, rgba(255,255,255,0.03) 0%, transparent 50%),
+      linear-gradient(225deg, rgba(255,255,255,0.02) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .hero-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 10px;
+  }
+
+  .hero-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 48px;
+    font-weight: 900;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: #fff;
+    line-height: 1.05;
+    margin-bottom: 6px;
+  }
+
+  .hero-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 48px;
+    font-weight: 300;
+    letter-spacing: 12px;
+    text-transform: uppercase;
+    color: #fff;
+    line-height: 1.05;
+    margin-bottom: 14px;
+  }
+
+  .hero-desc {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 9px;
+    letter-spacing: 3px;
+    color: #777;
+    max-width: 400px;
+    margin: 0 auto;
+    line-height: 1.8;
+    text-transform: uppercase;
+  }
+
+  .hero-divider {
+    width: 50px;
+    height: 2px;
+    background: #fff;
+    margin: 16px auto;
+  }
+
+  /* ═══════════════════════════════════
+     6-GRID PHOTO/SERVICES SECTION
+  ═══════════════════════════════════ */
+  .grid-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 2px;
+    padding: 2px;
+    background: #222;
+  }
+
+  .grid-item {
+    position: relative;
+    height: 155px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 15px;
+  }
+
+  .grid-item:nth-child(odd) {
+    background: #111;
+  }
+
+  .grid-item:nth-child(even) {
+    background: #1a1a1a;
+  }
+
+  .grid-item .grid-icon {
+    font-size: 32px;
+    margin-bottom: 10px;
+    opacity: 0.9;
+  }
+
+  .grid-item .grid-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 6px;
+  }
+
+  .grid-item .grid-desc {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 8px;
+    letter-spacing: 1.5px;
+    color: #888;
+    line-height: 1.6;
+    text-transform: uppercase;
+  }
+
+  /* ═══════════════════════════════════
+     ABOUT / DESCRIPTION SECTION
+  ═══════════════════════════════════ */
+  .about-section {
+    padding: 30px;
+    background: #fff;
+    color: #000;
+    text-align: center;
+  }
+
+  .about-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 8px;
+    font-weight: 500;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: #999;
+    margin-bottom: 8px;
+  }
+
+  .about-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #000;
+    margin-bottom: 14px;
+  }
+
+  .about-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 9px;
+    letter-spacing: 1px;
+    color: #666;
+    line-height: 2;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  .about-divider {
+    width: 50px;
+    height: 2px;
+    background: #000;
+    margin: 16px auto 0;
+  }
+
+  /* ═══════════════════════════════════
+     PROGRAMS / SCHEDULE BAR
+  ═══════════════════════════════════ */
+  .programs-bar {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    background: #111;
+    border-top: 2px solid #333;
+    border-bottom: 2px solid #333;
+  }
+
+  .program-item {
+    text-align: center;
+    padding: 20px 10px;
+    border-right: 1px solid #222;
+  }
+
+  .program-item:last-child {
+    border-right: none;
+  }
+
+  .program-item .prog-time {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    color: #fff;
+    letter-spacing: 2px;
+    margin-bottom: 4px;
+  }
+
+  .program-item .prog-name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #ccc;
+    margin-bottom: 2px;
+  }
+
+  .program-item .prog-detail {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 7px;
+    letter-spacing: 1px;
+    color: #666;
+    text-transform: uppercase;
+  }
+
+  /* ═══════════════════════════════════
+     CTA / OFFER SECTION
+  ═══════════════════════════════════ */
+  .cta-section {
+    background: #fff;
+    color: #000;
+    text-align: center;
+    padding: 25px 30px;
+  }
+
+  .cta-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 8px;
+    font-weight: 500;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: #999;
+    margin-bottom: 6px;
+  }
+
+  .cta-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #000;
+    margin-bottom: 12px;
+  }
+
+  .cta-button {
+    display: inline-block;
+    background: #000;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    padding: 12px 40px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  .cta-button:hover {
+    background: #333;
+  }
+
+  /* ═══════════════════════════════════
+     FOOTER / CONTACT
+  ═══════════════════════════════════ */
+  .footer {
+    background: #000;
+    padding: 22px 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    border-top: 3px solid #fff;
+  }
+
+  .footer-col {
+    text-align: center;
+  }
+
+  .footer-col .fc-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+
+  .footer-col .fc-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 8px;
+    color: #888;
+    line-height: 1.8;
+    letter-spacing: 1px;
+  }
+
+  .footer-bottom {
+    background: #000;
+    text-align: center;
+    padding: 0 30px 16px;
+  }
+
+  .footer-bottom p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 7px;
+    color: #555;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 10px;
+  }
+
+  .social-icon {
+    width: 28px;
+    height: 28px;
+    border: 1px solid #555;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: #aaa;
+  }
+</style>
+</head>
+<body>
+  <div class="flyer">
+
+    <!-- ===== TOP HEADER ===== -->
+    <div class="top-header">
+      <div class="logo-section">
+        <div class="logo-box">GYM</div>
+        <div class="logo-text">
+          <h1>GYM & FITNESS</h1>
+          <p>Health &bull; Strength &bull; Wellness</p>
+        </div>
+      </div>
+      <div class="header-contact">
+        <p class="phone-number">+123-456-789</p>
+        <p>www.gymfitness.com</p>
+        <p>info@gymfitness.com</p>
+      </div>
+    </div>
+
+    <!-- ===== HERO ===== -->
+    <div class="hero-section">
+      <div class="hero-label">Welcome To Our</div>
+      <h2 class="hero-title">GYM &</h2>
+      <h2 class="hero-subtitle">FITNESS</h2>
+      <div class="hero-divider"></div>
+      <p class="hero-desc">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+      </p>
+    </div>
+
+    <!-- ===== 6-GRID SERVICES ===== -->
+    <div class="grid-section">
+      <div class="grid-item">
+        <div class="grid-icon">🏋️</div>
+        <div class="grid-title">Weights</div>
+        <div class="grid-desc">Free Weights &<br>Machines Training</div>
+      </div>
+      <div class="grid-item">
+        <div class="grid-icon">🏃</div>
+        <div class="grid-title">Cardio</div>
+        <div class="grid-desc">Treadmill, Cycling<br>& Running</div>
+      </div>
+      <div class="grid-item">
+        <div class="grid-icon">🧘</div>
+        <div class="grid-title">Yoga</div>
+        <div class="grid-desc">Flexibility &<br>Meditation</div>
+      </div>
+      <div class="grid-item">
+        <div class="grid-icon">🥊</div>
+        <div class="grid-title">Boxing</div>
+        <div class="grid-desc">Kickboxing &<br>Self Defense</div>
+      </div>
+      <div class="grid-item">
+        <div class="grid-icon">💪</div>
+        <div class="grid-title">Personal</div>
+        <div class="grid-desc">One-On-One<br>Training Sessions</div>
+      </div>
+      <div class="grid-item">
+        <div class="grid-icon">🍎</div>
+        <div class="grid-title">Nutrition</div>
+        <div class="grid-desc">Diet Planning &<br>Coaching</div>
+      </div>
+    </div>
+
+    <!-- ===== ABOUT ===== -->
+    <div class="about-section">
+      <div class="about-label">About Us</div>
+      <h3 class="about-title">Why Choose Us</h3>
+      <p class="about-text">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      </p>
+      <div class="about-divider"></div>
+    </div>
+
+    <!-- ===== PROGRAMS BAR ===== -->
+    <div class="programs-bar">
+      <div class="program-item">
+        <div class="prog-time">06:00</div>
+        <div class="prog-name">Morning</div>
+        <div class="prog-detail">Cardio & Yoga</div>
+      </div>
+      <div class="program-item">
+        <div class="prog-time">10:00</div>
+        <div class="prog-name">Mid-Day</div>
+        <div class="prog-detail">Weights & CrossFit</div>
+      </div>
+      <div class="program-item">
+        <div class="prog-time">16:00</div>
+        <div class="prog-name">Evening</div>
+        <div class="prog-detail">Boxing & HIIT</div>
+      </div>
+      <div class="program-item">
+        <div class="prog-time">20:00</div>
+        <div class="prog-name">Night</div>
+        <div class="prog-detail">Personal Training</div>
+      </div>
+    </div>
+
+    <!-- ===== CTA ===== -->
+    <div class="cta-section">
+      <div class="cta-label">Limited Time</div>
+      <h3 class="cta-title">Get Your Free Trial Now</h3>
+      <a href="#" class="cta-button">Join Today</a>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <div class="footer">
+      <div class="footer-col">
+        <div class="fc-title">Address</div>
+        <div class="fc-text">
+          123 Fitness Street<br>
+          City, State 12345<br>
+          Country
+        </div>
+      </div>
+      <div class="footer-col">
+        <div class="fc-title">Contact</div>
+        <div class="fc-text">
+          +123-456-789<br>
+          info@gymfitness.com<br>
+          www.gymfitness.com
+        </div>
+      </div>
+      <div class="footer-col">
+        <div class="fc-title">Hours</div>
+        <div class="fc-text">
+          Mon - Fri: 6AM - 10PM<br>
+          Saturday: 8AM - 8PM<br>
+          Sunday: 8AM - 6PM
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="social-icons">
+        <div class="social-icon">f</div>
+        <div class="social-icon">t</div>
+        <div class="social-icon">in</div>
+        <div class="social-icon">@</div>
+      </div>
+      <p>© 2025 Gym & Fitness. All Rights Reserved.</p>
+    </div>
+
+  </div>
+</body>
+</html>

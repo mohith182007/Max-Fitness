@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MaxGym - Premium Membership Offer</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Lato:wght@300;400;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #1a1510;
+    font-family: 'Lato', sans-serif;
+  }
+
+  .poster {
+    width: 800px;
+    min-height: 1100px;
+    background: linear-gradient(175deg, #1a1510 0%, #0f0c08 40%, #1a1510 100%);
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+    text-align: center;
+    padding: 50px 40px;
+  }
+
+  /* Gold shimmer overlay */
+  .poster::before {
+    content: '';
+    position: absolute;
+    top: -200px; left: -200px;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(212,175,55,0.1) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .poster::after {
+    content: '';
+    position: absolute;
+    bottom: -200px; right: -200px;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(212,175,55,0.08) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .gold-line {
+    width: 80px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #d4af37, transparent);
+    margin: 0 auto 30px;
+  }
+
+  .logo-container {
+    width: 140px;
+    height: 140px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #d4af37;
+    box-shadow: 0 0 30px rgba(212,175,55,0.2);
+    position: relative;
+    z-index: 1;
+  }
+
+  .logo-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .gym-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 50px;
+    font-weight: 900;
+    color: #d4af37;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 1;
+  }
+
+  .subtitle {
+    font-size: 13px;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    color: #8b7536;
+    margin-top: 5px;
+    font-weight: 300;
+    position: relative;
+    z-index: 1;
+  }
+
+  .gold-line-mid {
+    width: 300px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #d4af37 30%, #d4af37 70%, transparent);
+    margin: 30px auto;
+  }
+
+  .offer-label {
+    font-size: 14px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: #d4af37;
+    position: relative;
+    z-index: 1;
+  }
+
+  .exclusive-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: #fff;
+    margin: 10px 0 5px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .discount-display {
+    font-family: 'Playfair Display', serif;
+    font-size: 90px;
+    font-weight: 900;
+    color: #d4af37;
+    text-shadow: 0 0 40px rgba(212,175,55,0.3);
+    line-height: 1;
+    margin: 10px 0;
+    position: relative;
+    z-index: 1;
+  }
+
+  .discount-display span {
+    font-size: 36px;
+  }
+
+  .plans-section {
+    max-width: 620px;
+    margin: 30px auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .plan-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 25px;
+    border-bottom: 1px solid rgba(212,175,55,0.1);
+  }
+
+  .plan-row:last-child {
+    border-bottom: none;
+  }
+
+  .plan-row.highlight {
+    background: rgba(212,175,55,0.05);
+    border: 1px solid rgba(212,175,55,0.2);
+    border-radius: 8px;
+    margin: 5px 0;
+  }
+
+  .plan-left {
+    text-align: left;
+  }
+
+  .plan-tier {
+    font-size: 18px;
+    font-weight: 700;
+    color: #d4af37;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  .plan-desc {
+    font-size: 12px;
+    color: #666;
+    margin-top: 3px;
+  }
+
+  .plan-right {
+    text-align: right;
+  }
+
+  .plan-was {
+    font-size: 14px;
+    color: #555;
+    text-decoration: line-through;
+  }
+
+  .plan-now {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: #d4af37;
+  }
+
+  .crown-badge {
+    display: inline-block;
+    font-size: 10px;
+    background: #d4af37;
+    color: #000;
+    padding: 3px 12px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    margin-left: 10px;
+    vertical-align: middle;
+  }
+
+  .inclusions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    max-width: 500px;
+    margin: 30px auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .inclusion-item {
+    font-size: 13px;
+    color: #999;
+    text-align: left;
+    padding-left: 20px;
+    position: relative;
+  }
+
+  .inclusion-item::before {
+    content: '★';
+    position: absolute;
+    left: 0;
+    color: #d4af37;
+    font-size: 10px;
+    top: 2px;
+  }
+
+  .cta-gold {
+    display: inline-block;
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: #0f0c08;
+    background: linear-gradient(135deg, #d4af37, #f2d06b, #d4af37);
+    padding: 16px 55px;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    box-shadow: 0 10px 40px rgba(212,175,55,0.2);
+    position: relative;
+    z-index: 1;
+    margin-top: 15px;
+  }
+
+  .terms {
+    font-size: 11px;
+    color: #444;
+    margin-top: 15px;
+    letter-spacing: 1px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .footer-gold {
+    margin-top: 35px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(212,175,55,0.1);
+    font-size: 13px;
+    color: #555;
+    position: relative;
+    z-index: 1;
+  }
+</style>
+</head>
+<body>
+  <div class="poster">
+    <div class="gold-line"></div>
+
+    <div class="logo-container">
+      <img src="logo.jpg" alt="MaxGym Logo">
+    </div>
+
+    <h1 class="gym-name">MaxGym</h1>
+    <p class="subtitle">Premium Fitness Club</p>
+
+    <div class="gold-line-mid"></div>
+
+    <p class="offer-label">✦ Exclusive Membership Offer ✦</p>
+    <p class="exclusive-text">Premium Access</p>
+
+    <div class="discount-display">35<span>% OFF</span></div>
+
+    <div class="plans-section">
+      <div class="plan-row">
+        <div class="plan-left">
+          <div class="plan-tier">Silver</div>
+          <div class="plan-desc">3 Months Access</div>
+        </div>
+        <div class="plan-right">
+          <div class="plan-was">₹7,500</div>
+          <div class="plan-now">₹4,875</div>
+        </div>
+      </div>
+
+      <div class="plan-row highlight">
+        <div class="plan-left">
+          <div class="plan-tier">Gold <span class="crown-badge">👑 Best Value</span></div>
+          <div class="plan-desc">6 Months Access + 1 Month Free</div>
+        </div>
+        <div class="plan-right">
+          <div class="plan-was">₹14,000</div>
+          <div class="plan-now">₹9,100</div>
+        </div>
+      </div>
+
+      <div class="plan-row">
+        <div class="plan-left">
+          <div class="plan-tier">Platinum</div>
+          <div class="plan-desc">12 Months Access + 2 Months Free</div>
+        </div>
+        <div class="plan-right">
+          <div class="plan-was">₹24,000</div>
+          <div class="plan-now">₹15,600</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="inclusions">
+      <div class="inclusion-item">State-of-the-art equipment</div>
+      <div class="inclusion-item">Certified personal trainers</div>
+      <div class="inclusion-item">Spa & sauna access</div>
+      <div class="inclusion-item">Nutrition consultation</div>
+      <div class="inclusion-item">Group fitness classes</div>
+      <div class="inclusion-item">Priority booking</div>
+    </div>
+
+    <button class="cta-gold">Reserve Your Spot</button>
+    <p class="terms">* Limited memberships available. Terms & conditions apply.</p>
+
+    <div class="footer-gold">
+      📞 +91 98765 43210 &nbsp;&bull;&nbsp; 📍 MaxGym, Main Road &nbsp;&bull;&nbsp; ✉️ info@maxgym.com
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,190 @@
+================================================================================
+         HIGHLIGHTING SOCIAL ISSUES IN FAIR TRADE PRACTICES - SURVEY
+================================================================================
+
+Form Title: Highlighting Social Issues in Fair Trade Practices
+
+Form Description:
+This survey aims to gather insights on social issues related to fair trade practices. Your responses will help us understand the impact of fair trade on communities and workers. All fields marked with * are required.
+
+================================================================================
+SECTION 1: PERSONAL INFORMATION
+================================================================================
+
+Question 1: Full Name *
+Type: Short Answer (Text)
+
+Question 2: Date of Birth *
+Type: Date
+
+Question 3: Address *
+Type: Long Answer (Paragraph)
+
+Question 4: City *
+Type: Short Answer (Text)
+
+Question 5: State *
+Type: Short Answer (Text)
+
+Question 6: Pin Code *
+Type: Short Answer (Text)
+Validation: 6-digit number only
+Help Text: Please enter a valid 6-digit PIN code
+
+Question 7: Phone Number *
+Type: Short Answer (Text)
+Validation: 10-digit number only
+Help Text: Please enter a valid 10-digit phone number
+
+Question 8: Email Address *
+Type: Short Answer (Text)
+Validation: Email format
+
+================================================================================
+SECTION 2: EMERGENCY CONTACT INFORMATION
+================================================================================
+
+Question 9: Emergency Contact Full Name *
+Type: Short Answer (Text)
+
+Question 10: Emergency Contact Phone Number *
+Type: Short Answer (Text)
+Validation: 10-digit number only
+Help Text: Please enter a valid 10-digit phone number
+
+Question 11: Relationship with Emergency Contact *
+Type: Short Answer (Text)
+
+================================================================================
+SECTION 3: HEALTH & FITNESS INFORMATION
+================================================================================
+
+Question 12: Do you have any medical condition or injuries we should be aware of? *
+Type: Multiple Choice
+Options:
+  - Yes
+  - No
+
+Question 13: If yes, please explain your medical conditions or injuries
+Type: Long Answer (Paragraph)
+Help Text: Leave blank if not applicable
+Required: No
+
+Question 14: Fitness Goals (Select all that apply) *
+Type: Checkbox (Multiple Selection)
+Options:
+  - Weight Loss
+  - Muscle Gain
+  - General Fitness
+  - Strength Training
+  - Cardio Improvement
+  - Flexibility
+  - Sports Training
+  - Stress Relief
+  - Other
+
+Question 15: Other Fitness Goals (if selected above)
+Type: Short Answer (Text)
+Required: No
+
+================================================================================
+SECTION 4: MEMBERSHIP OPTIONS
+================================================================================
+
+Question 16: Please select your membership plan *
+Type: Multiple Choice
+Options:
+  - Monthly
+  - Quarterly
+  - Annual
+  - Other
+
+Question 17: If you selected "Other", please specify
+Type: Short Answer (Text)
+Required: No
+
+================================================================================
+SECTION 5: PREFERRED PAYMENT OPTIONS
+================================================================================
+
+Question 18: Please choose your preferred payment method *
+Type: Multiple Choice
+Options:
+  - Cash
+  - Paytm
+  - PhonePe
+  - Google Pay
+
+Question 19: Payment Authorization *
+Type: Checkbox
+Options:
+  - I authorize the gym to automatically charge my selected payment method for membership renewals and other related charges. I understand that I can update or cancel this authorization at any time.
+
+================================================================================
+SECTION 6: CONSENT AND WAIVERS
+================================================================================
+
+--- Section Header ---
+Title: 1. Exercise at Your Own Risk
+Description: I understand that participating in physical activity at this gym car
+ries risks. I agree to exercise at my own risk and acknowledge that the gym is not r
+esponsible for any injuries or health issues that may arise. I have consu
+lted with my physician and am fit to undertake an exercise program.
+
+Question 20: Exercise Risk Acknowledgement *
+Type: Checkbox
+Options:
+  - I acknowledge and accept the exercise risks as stated above
+
+--- Section Header ---
+Title: 2. Marketing Consent
+Description: I consent to receive marketing communications, newsletters, and promotions from the gym via email, SMS, or phone. I understand that I can unsubscribe at any time by following the instructions provided in the communications.
+
+Question 21: Marketing Communications *
+Type: Multiple Choice
+Options:
+  - Yes, I consent to receive marketing communications
+  - No, I do not wish to receive marketing communications
+
+--- Section Header ---
+Title: 3. Consent to Use of Image
+Description: I give permission for the gym to take photographs or videos of me during workouts or gym events for promotional purposes (social media, website, advertising). I understand that I will not receive compensation for the use of these images.
+
+Question 22: Image/Video Consent *
+Type: Multiple Choice
+Options:
+  - Yes, I give permission to use my image/video
+  - No, I do not give permission to use my image/video
+
+--- Section Header ---
+Title: 4. Personal Data Protection
+Description: I understand that my personal data will be processed in accordance with applicable privacy laws, including GDPR and the California Consumer Privacy Act (CCPA). The gym may collect, store, and use my personal data for membership management, billing, and communication purposes. I acknowledge that I have the right to access, correct, or request deletion of my personal data by contacting the gym.
+
+Question 23: Data Protection Acknowledgement *
+Type: Checkbox
+Options:
+  - I acknowledge and accept the personal data protection terms as stated above
+
+================================================================================
+SECTION 7: ACKNOWLEDGEMENT
+================================================================================
+
+Question 24: Final Acknowledgement *
+Type: Checkbox
+Options:
+  - By checking this box, I confirm that I have read and understood the gym's terms and conditions, including the waivers, consents, and privacy policies outlined above.
+
+Question 25: Your Full Name (as digital signature) *
+Type: Short Answer (Text)
+Help Text: Please type your full name as acknowledgement of this registration
+
+Question 26: Date *
+Type: Date
+
+================================================================================
+CONFIRMATION MESSAGE
+================================================================================
+
+Thank you for registering with our gym! A gym representative will contact you shortly to complete the registration process. Welcome to the fitness family!
+
+================================================================================

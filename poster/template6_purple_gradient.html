@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MaxGym - Weekend Warrior Deal</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=DM+Sans:wght@400;500;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #16141f;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .poster {
+    width: 800px;
+    min-height: 1100px;
+    background: linear-gradient(160deg, #1a0933 0%, #0f0524 30%, #1a0a3a 60%, #12082c 100%);
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+    text-align: center;
+    padding: 50px 40px;
+  }
+
+  /* Gradient orbs */
+  .orb-1 {
+    position: absolute;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(139,92,246,0.15) 0%, transparent 60%);
+    top: -150px; right: -150px;
+    pointer-events: none;
+  }
+
+  .orb-2 {
+    position: absolute;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(236,72,153,0.1) 0%, transparent 60%);
+    bottom: -100px; left: -100px;
+    pointer-events: none;
+  }
+
+  .top-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, rgba(139,92,246,0.2), rgba(236,72,153,0.2));
+    border: 1px solid rgba(139,92,246,0.3);
+    border-radius: 30px;
+    padding: 8px 24px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #c084fc;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 25px;
+  }
+
+  .logo-container {
+    width: 130px;
+    height: 130px;
+    margin: 0 auto 20px;
+    border-radius: 24px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #8b5cf6, #ec4899);
+    padding: 3px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .logo-inner {
+    width: 100%;
+    height: 100%;
+    border-radius: 22px;
+    overflow: hidden;
+    background: #1a0933;
+  }
+
+  .logo-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .gym-name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #c084fc, #f472b6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 1;
+  }
+
+  .gym-sub {
+    font-size: 13px;
+    color: #6b5b8a;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .discount-container {
+    position: relative;
+    z-index: 1;
+    margin: 20px 0;
+  }
+
+  .discount-number {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 110px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #8b5cf6, #ec4899, #8b5cf6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+  }
+
+  .discount-text {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 15px;
+  }
+
+  .promo-name {
+    font-size: 16px;
+    color: #c084fc;
+    margin: 15px 0 30px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 1;
+  }
+
+  .tier-cards {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 30px;
+  }
+
+  .tier {
+    width: 220px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(139,92,246,0.15);
+    border-radius: 16px;
+    padding: 28px 20px;
+    backdrop-filter: blur(10px);
+  }
+
+  .tier.star {
+    border-color: rgba(236,72,153,0.4);
+    background: linear-gradient(160deg, rgba(139,92,246,0.08), rgba(236,72,153,0.08));
+    box-shadow: 0 10px 40px rgba(139,92,246,0.1);
+    position: relative;
+  }
+
+  .tier.star::after {
+    content: '⭐ RECOMMENDED';
+    position: absolute;
+    top: -10px; left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, #8b5cf6, #ec4899);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 4px 14px;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+
+  .tier-name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #8b8b9e;
+    margin-bottom: 12px;
+  }
+
+  .tier-old {
+    font-size: 15px;
+    color: #444;
+    text-decoration: line-through;
+  }
+
+  .tier-price {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #c084fc, #f472b6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 5px 0;
+  }
+
+  .tier-period {
+    font-size: 12px;
+    color: #555;
+  }
+
+  .tier-bonus {
+    display: inline-block;
+    background: rgba(139,92,246,0.1);
+    border: 1px solid rgba(139,92,246,0.2);
+    color: #c084fc;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-top: 10px;
+  }
+
+  .features-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    max-width: 550px;
+    margin: 0 auto 30px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .feat {
+    background: rgba(139,92,246,0.06);
+    border: 1px solid rgba(139,92,246,0.12);
+    border-radius: 8px;
+    padding: 10px 16px;
+    font-size: 13px;
+    color: #8b8b9e;
+  }
+
+  .feat strong {
+    color: #c084fc;
+  }
+
+  .cta-gradient {
+    display: inline-block;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    background: linear-gradient(135deg, #8b5cf6, #ec4899);
+    padding: 18px 55px;
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    box-shadow: 0 10px 40px rgba(139,92,246,0.3);
+    position: relative;
+    z-index: 1;
+  }
+
+  .small-note {
+    font-size: 12px;
+    color: #3d3456;
+    margin-top: 15px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .contact-footer {
+    margin-top: 30px;
+    font-size: 13px;
+    color: #3d3456;
+    position: relative;
+    z-index: 1;
+  }
+
+  .contact-footer a {
+    color: #8b5cf6;
+    text-decoration: none;
+  }
+</style>
+</head>
+<body>
+  <div class="poster">
+    <div class="orb-1"></div>
+    <div class="orb-2"></div>
+
+    <div class="top-badge">Limited Time Offer</div>
+
+    <div class="logo-container">
+      <div class="logo-inner">
+        <img src="logo.jpg" alt="MaxGym Logo">
+      </div>
+    </div>
+
+    <h1 class="gym-name">MaxGym</h1>
+    <p class="gym-sub">Fitness Redefined</p>
+
+    <div class="discount-container">
+      <div class="discount-number">55% OFF</div>
+      <div class="discount-text">ALL PLANS</div>
+    </div>
+
+    <p class="promo-name">🎉 Weekend Warrior Deal 🎉</p>
+
+    <div class="tier-cards">
+      <div class="tier">
+        <div class="tier-name">Starter</div>
+        <div class="tier-old">₹2,000/mo</div>
+        <div class="tier-price">₹899</div>
+        <div class="tier-period">/month</div>
+        <div class="tier-bonus">+ Free Gloves</div>
+      </div>
+      <div class="tier star">
+        <div class="tier-name">Pro</div>
+        <div class="tier-old">₹10,000/6mo</div>
+        <div class="tier-price">₹4,499</div>
+        <div class="tier-period">/6 months</div>
+        <div class="tier-bonus">+ Free PT Sessions</div>
+      </div>
+      <div class="tier">
+        <div class="tier-name">Elite</div>
+        <div class="tier-old">₹18,000/yr</div>
+        <div class="tier-price">₹8,099</div>
+        <div class="tier-period">/year</div>
+        <div class="tier-bonus">+ Free Supplements</div>
+      </div>
+    </div>
+
+    <div class="features-list">
+      <div class="feat"><strong>✓</strong> Unlimited Access</div>
+      <div class="feat"><strong>✓</strong> Group Classes</div>
+      <div class="feat"><strong>✓</strong> Personal Training</div>
+      <div class="feat"><strong>✓</strong> Cardio & Weights</div>
+      <div class="feat"><strong>✓</strong> Steam & Sauna</div>
+      <div class="feat"><strong>✓</strong> Diet Consultation</div>
+    </div>
+
+    <button class="cta-gradient">Claim Your Spot</button>
+    <p class="small-note">* Offer valid this weekend only. First 50 members get extra 5% off.</p>
+
+    <div class="contact-footer">
+      📞 +91 98765 43210 &nbsp;&bull;&nbsp; 📍 MaxGym, Main Road &nbsp;&bull;&nbsp; <a href="#">@maxgym</a>
+    </div>
+  </div>
+</body>
+</html>

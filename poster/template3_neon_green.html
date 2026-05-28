@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MaxGym - Flash Sale</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&family=Orbitron:wght@700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #0a0a0a;
+    font-family: 'Rajdhani', sans-serif;
+  }
+
+  .poster {
+    width: 800px;
+    min-height: 1100px;
+    background: #0d0d0d;
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+    text-align: center;
+    padding: 50px 40px;
+  }
+
+  /* Neon glow grid lines */
+  .poster::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: 
+      linear-gradient(rgba(0,255,100,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,255,100,0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+  }
+
+  .poster::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 50%;
+    width: 600px;
+    height: 600px;
+    transform: translateX(-50%);
+    background: radial-gradient(circle, rgba(0,255,100,0.08) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .neon-border {
+    position: absolute;
+    top: 15px; left: 15px; right: 15px; bottom: 15px;
+    border: 2px solid rgba(0,255,100,0.3);
+    border-radius: 8px;
+    pointer-events: none;
+    box-shadow: inset 0 0 30px rgba(0,255,100,0.05), 0 0 30px rgba(0,255,100,0.05);
+  }
+
+  .logo-container {
+    width: 130px;
+    height: 130px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #00ff64;
+    box-shadow: 0 0 20px rgba(0,255,100,0.3), 0 0 60px rgba(0,255,100,0.1);
+    position: relative;
+    z-index: 1;
+  }
+
+  .logo-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .gym-name {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 48px;
+    font-weight: 900;
+    color: #00ff64;
+    text-shadow: 0 0 20px rgba(0,255,100,0.5), 0 0 60px rgba(0,255,100,0.2);
+    letter-spacing: 8px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .flash-label {
+    display: inline-block;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 14px;
+    letter-spacing: 8px;
+    color: #00ff64;
+    border: 1px solid #00ff64;
+    padding: 8px 25px;
+    margin: 25px 0;
+    text-transform: uppercase;
+    box-shadow: 0 0 10px rgba(0,255,100,0.2);
+    position: relative;
+    z-index: 1;
+  }
+
+  .flash-label::before, .flash-label::after {
+    content: '⚡';
+    margin: 0 8px;
+  }
+
+  .big-discount {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 120px;
+    font-weight: 900;
+    color: #fff;
+    text-shadow: 0 0 40px rgba(0,255,100,0.4);
+    line-height: 1;
+    position: relative;
+    z-index: 1;
+    margin: 10px 0;
+  }
+
+  .big-discount .percent {
+    font-size: 50px;
+    color: #00ff64;
+    vertical-align: top;
+    display: inline-block;
+    margin-top: 20px;
+  }
+
+  .off-text {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 32px;
+    letter-spacing: 15px;
+    color: rgba(255,255,255,0.5);
+    position: relative;
+    z-index: 1;
+    margin-bottom: 30px;
+  }
+
+  .plans-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    max-width: 600px;
+    margin: 0 auto 30px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .plan-card {
+    background: rgba(0,255,100,0.03);
+    border: 1px solid rgba(0,255,100,0.15);
+    border-radius: 10px;
+    padding: 22px 15px;
+    transition: all 0.3s;
+  }
+
+  .plan-card:hover {
+    border-color: #00ff64;
+    box-shadow: 0 0 20px rgba(0,255,100,0.15);
+  }
+
+  .plan-card.best {
+    border-color: #00ff64;
+    background: rgba(0,255,100,0.08);
+    grid-column: span 2;
+    box-shadow: 0 0 30px rgba(0,255,100,0.1);
+  }
+
+  .plan-card.best .best-tag {
+    display: inline-block;
+    background: #00ff64;
+    color: #000;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 3px 12px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+  }
+
+  .plan-name {
+    font-size: 16px;
+    font-weight: 600;
+    color: #00ff64;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 8px;
+  }
+
+  .plan-old {
+    font-size: 16px;
+    color: #555;
+    text-decoration: line-through;
+  }
+
+  .plan-new {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: #fff;
+  }
+
+  .plan-card.best .plan-new {
+    font-size: 40px;
+  }
+
+  .plan-per {
+    font-size: 13px;
+    color: #555;
+  }
+
+  .features-row {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    margin: 25px 0;
+    position: relative;
+    z-index: 1;
+  }
+
+  .feature-pill {
+    background: rgba(0,255,100,0.08);
+    border: 1px solid rgba(0,255,100,0.2);
+    border-radius: 30px;
+    padding: 8px 20px;
+    font-size: 13px;
+    color: #aaa;
+  }
+
+  .cta-neon {
+    display: inline-block;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #000;
+    background: #00ff64;
+    padding: 16px 50px;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    box-shadow: 0 0 30px rgba(0,255,100,0.4), 0 0 60px rgba(0,255,100,0.1);
+    position: relative;
+    z-index: 1;
+    margin-top: 10px;
+  }
+
+  .limited-text {
+    font-size: 13px;
+    color: #444;
+    margin-top: 15px;
+    letter-spacing: 2px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .contact-bar {
+    margin-top: 30px;
+    font-size: 13px;
+    color: #444;
+    position: relative;
+    z-index: 1;
+  }
+</style>
+</head>
+<body>
+  <div class="poster">
+    <div class="neon-border"></div>
+
+    <div class="logo-container">
+      <img src="logo.jpg" alt="MaxGym Logo">
+    </div>
+
+    <h1 class="gym-name">MAXGYM</h1>
+
+    <div class="flash-label">Flash Sale</div>
+
+    <div class="big-discount">60<span class="percent">%</span></div>
+    <div class="off-text">OFF</div>
+
+    <div class="plans-grid">
+      <div class="plan-card">
+        <div class="plan-name">1 Month</div>
+        <div class="plan-old">₹3,000</div>
+        <div class="plan-new">₹1,199</div>
+        <div class="plan-per">/month</div>
+      </div>
+      <div class="plan-card">
+        <div class="plan-name">3 Months</div>
+        <div class="plan-old">₹8,000</div>
+        <div class="plan-new">₹3,199</div>
+        <div class="plan-per">/quarter</div>
+      </div>
+      <div class="plan-card best">
+        <div class="best-tag">🔥 Best Deal</div>
+        <div class="plan-name">Annual Plan</div>
+        <div class="plan-old">₹24,000</div>
+        <div class="plan-new">₹9,599</div>
+        <div class="plan-per">Just ₹800/month — Save ₹14,401!</div>
+      </div>
+    </div>
+
+    <div class="features-row">
+      <div class="feature-pill">🏋️ Full Gym Access</div>
+      <div class="feature-pill">👤 Free PT Session</div>
+      <div class="feature-pill">🧘 Yoga Classes</div>
+      <div class="feature-pill">💪 CrossFit Zone</div>
+      <div class="feature-pill">🚿 AC & Showers</div>
+    </div>
+
+    <button class="cta-neon">Grab The Deal</button>
+    <p class="limited-text">⏰ Offer ends in 48 hours — Don't miss out!</p>
+
+    <div class="contact-bar">📞 +91 98765 43210 &nbsp;|&nbsp; 📍 MaxGym, Main Road</div>
+  </div>
+</body>
+</html>
